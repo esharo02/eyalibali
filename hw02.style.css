@@ -1,0 +1,127 @@
+
+.myDiv0{
+    text-align: center; background-color: white;
+    padding-bottom: 150px;
+    margin: 250px;
+    margin-top: 30px;
+    border-top: 10px; border-color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgba(70, 66, 66, 0.61);
+    padding: 50px;
+    padding-top: 40px;
+}
+
+p{
+
+    background-image: url("fall2.html"); 
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+
+
+h1{ font-weight: 300; color: #bb2b0a71; font-size: 50px; font-family: sans-serif;
+
+    background-color: #eebca96d; text-align: center;
+}
+
+h2
+{
+  font-weight: 300; color: #7a1a04c7; font-size: 30px; font-family: serif;
+  padding-left: 10px;
+  text-align: center;
+}
+
+.myDiv1 {
+    text-decoration: non;
+  background-color:#f8d0c3; text-align: center; font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #75110a9d;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+}
+
+a {color:green};
+
+
+  .myDiv2 {
+    border: 3px outset rgb(109, 25, 13);
+    background-color: rgb(252, 231, 212);
+    padding-bottom: 500px;
+  }
+
+
+  .raking{
+    background-image: url(raking.jfif);
+
+
+    padding: 100px;
+  }
+
+
+.mydiv4{
+    background-color:#f8d0c3; text-align: center; font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #75110a9d; padding-right: 100px;  }
+
+
+.sidenav {
+    height: 1000px;
+    width: 160px;
+    display: inline-flex;
+    text-align: center;
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    background-color: #f8d0c3; 
+    overflow-x: hidden; /* Disable horizontal scroll */
+  }
+
+
+
+
+    ul {list-style-type:none; }
+    ul li {padding: 15px; margin-right: 40px; border-top: 1px solid #999}
+    ul li:last-child{border-bottom:5px solid #c11a1a}
+
+
+.floating{
+  height: 10%; /* Full-height: remove this if you want "auto" height */
+  width: 100px; /* Set the width of the sidebar */
+  border:10px;
+  border-color: #75110a9d;
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  text-align: center;
+  background-image: url("leaves.png"); 
+  padding: 50px;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+
+}
+
+.texts{
+  text-align: center; background-color: white;
+    padding-bottom: 10px;
+    margin: 250px;
+    margin-top: 30px;
+    border-top: 10px; border-color: blue;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgba(70, 66, 66, 0.61);
+    padding: 50px;
+    padding-top: 40px;
+    border-color: #c11a1a;
+    
+}
+
+  
+.borders
+{
+  border-width: 10px;
+}
+
