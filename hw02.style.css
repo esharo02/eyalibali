@@ -1,14 +1,3 @@
-
-@Media(max-width: 500px) {
-  .banner {
-   font-size: 10px;
-   color: black;
-  }
-
-}
-            
-
-
 .logo
 {
   background-image: url("fall2.html");
