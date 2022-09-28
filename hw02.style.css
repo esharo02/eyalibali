@@ -1,3 +1,14 @@
+
+@Media(max-width: 500px) {
+  .banner {
+   font-size: 10px;
+   color: black;
+  }
+
+}
+            
+
+
 .logo
 {
   background-image: url("fall2.html");
@@ -5,7 +16,7 @@
 
 
 
-h1{ font-weight: 300; color: #bb2b0a71; font-size: 60px; font-family: sans-serif;
+h1{font-weight: 300; color: #bb2b0a71; font-size: 60px; font-family: sans-serif;
 
   background-color: #eebca96d; text-align: center;
   padding: 25px;
@@ -32,29 +43,31 @@ text-align: center;
 
 p{
   text-align: center; background-color: white;
-  font-size: 199px;
+  
+  font-size: 20px;
   line-height: 2;
   padding-bottom: 0px;
-  margin: 250px;
+  margin: 25px;
   margin-top: 30px;
   margin-bottom: 30px;
   border-top: 10px; border-color: blue;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color:rgba(70, 66, 66, 0.61);
-  padding: 50px;
   padding-top: 40px;
   border-color: #c11a1a;
   
 }
 .contacts{
     text-align: center; background-color: white;
+    font-size: 15px;
     padding-bottom: 150px;
-    margin: 250px;
+    margin: 150px;
     margin-top: 30px;
     border-top: 10px; border-color: white;
     font-family:"sans-serif";
     color:rgba(70, 66, 66, 0.61);
-    padding: 40px, 10px, 10px;
+    padding: 40px, 40px, 40px;
+    margin: ;
 }
 
 
@@ -67,22 +80,14 @@ a{color:green}
 
 
 .navi{
-  margin-top: 30px;
-  height: 13%; /* Full-height: remove this if you want "auto" height */
-  width: 100px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  right: 0;
+  margin-top: 20px;
+  margin-left: 40px;
   font-family: sans-serif;
   font-size: 25px;
   color:#75110a9d;
   text-align: left;
-  background-image: url("wood.jfif"); 
   padding-left: 0px; ;
   padding-bottom: 0px;
-  margin-right: 10px;
-  margin-top: 26px;
   overflow-x: hidden; /* Disable horizontal scroll */
 
 }
