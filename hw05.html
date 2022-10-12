@@ -64,14 +64,13 @@
         <div id =answer style="display: none; color:#0a275ec7">
         
         The numbers:
-        <strong><div id="input1"></div></strong>
+        <strong><span id="input1"></span></strong>
 
         and 
-        <strong><div id="input2"></div></strong>
+        <strong><span id="input2"></span></strong>
 
         are 
-
-        <strong><div id="result"></div></strong>
+        <strong><div id="result"></span></strong>
 
         </div>
 
@@ -80,50 +79,78 @@
         <div id = factors style="display:none; 
         border-top:rgba(48, 91, 156, 0.447) solid 3px;">
 
-        <strong><div id="num1"></div></strong>
+        <strong><span id="num1"></span></strong>
 
 
 
         's factors are: 
         
-        <strong><div id="afactors"></div></strong>
+        <strong><span id="afactors"></span></strong>
         <br>
         
 
 
-        <strong><div id="num2"></div></strong>
+        <strong><span id="num2"></span></strong>
         's factors are:
 
-        <strong><div id="bfactors"></div></strong>
+        <strong><span id="bfactors"></span></strong>
 
 
         </div>
 
 </div>
+</div>
 
         <script>
     
-            //like a main function, uses the form1/2 values to 
-            //get the factors and sum
-            //getsum calls the final determining function (finalize)
+            //like a main function, uses the form1/2 values to get the factors
         function go()
         {
                 
             a = (document.getElementById("form1").value);
             b = (document.getElementById("form2").value);
-
+            document.getElementById("input1").innerHTML = a;
+            document.getElementById("input2").innerHTML = b;
             document.getElementById("num1").innerHTML = a;
             document.getElementById("num2").innerHTML = b;
-                
+
             getfactors(a,b);
-            getsum(a,b);
         
         }
 
+
+        //calls factorsof for a/b, the user inputs 
+        //changes html display to show factors
+        //then gets the sum of these factors
+        function getfactors(one,two)
+        {
+            
+            afactors = (factorsof(one));
+            bfactors = (factorsof(two));
+
+            document.getElementById("afactors").innerHTML = afactors;
+            document.getElementById("bfactors").innerHTML = bfactors;
+            
+            getsum(afactors, bfactors);
+            
+          
+        }
+
+        //calculates the sum of afactors and bfactors array
+        //then calls finalize
+        function getsum(afactors,bfactors)
+        {
+            asum = sumfact(afactors);
+            bsum = sumfact(bfactors);
+
+            finalize(asum,bsum);   
+
+        }
+
         //determines (not)amicable based on both factor arrays' sum
+        //if factor sum equal opposite number, then true
         function finalize(asum,bsum)
         {
-
             result = "NULL";
             if (amicable(asum,bsum))
                 result = "amicable";
@@ -136,44 +163,25 @@
             
         }
         
-
-        //calls factorsof for a/b, the user inputs 
-        function getfactors(a,b)
-        {
-            
-            afactors = (factorsof(a));
-            bfactors = (factorsof(b));                 
-        }
-    
-        //calculates the sum of afactors and bfactors array
-        //then calls finalize
-        function getsum(afactors,bfactors)
-        {
-            asum = sumfact(afactors);
-            bsum = sumfact(bfactors);
-
-            document.getElementById("afactors").innerHTML = afactors;
-            document.getElementById("bfactors").innerHTML = bfactors;
-            finalize(asum,bsum);   
-
-        }
-
-        //true/false if amicable (factors sum equal each other)
+        //true/false if amicable (factors sum equal opposite number)
         function amicable(asum, bsum)
             {
-            if (asum == bsum)
-                return true;
+            if (asum == b)
+            {
+                if (bsum == a)
+                    return true;
+            }
             else
                 return false;
             }
 
         //calculates sum of an array input (all the factors of a number)
-        function sumfact(input)
+        function sumfact(factarray)
         {
             sum = 0;
-            for (i = 0; i < input.length; i++)
+            for (i = 0; i < factarray.length; i++)
             {
-                sum+= input[i];   
+                sum+=parseInt(factarray[i]);   
             }
             return sum;
         }
@@ -181,17 +189,20 @@
         //creates array of all number's factors
         function factorsof(input)
         {
+            input = parseInt(input);
             factors = [];
-            if (input == "0")
+            if (input == 0)
             {
                 factors.push(0);
                 return factors;
             }
 
-            for (i = 0; i <= input; i++)
+            for (i = 0; i < input; i++)
             {
                 if(input % i == 0)
+                {
                     factors.push(i);
+                }
                 else
                 {}
             }
