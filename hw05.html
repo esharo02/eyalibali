@@ -1,0 +1,215 @@
+<html>
+    <head>
+        <title> Homework 5 </title>
+
+        <div class= "background">
+        <link type= "text/css" rel="stylesheet" href="hw05_style.css">
+        <meta name='viewport'>
+        
+    </head>
+
+    <header>
+        
+            <h1>
+                <strong>
+                    Amicable Numbers
+                </strong>
+            </h1>
+        
+            
+    </header>    
+    
+    <body>
+        <h2 id =info>
+            Are your numbers amicable? Find out below:
+        </h2>
+
+
+        <form name="myForm" style="text-align: center">
+
+            <input id = "form1" type="text" name="valueA">
+            <input id = "form2" type="text" name="valueB">
+
+            <br>
+            <br>
+              <center><button id="button1" style="text-align: center; background-color: #f8d0c3; font-size: 20px;
+            border: 2px solid; border-color: rgba(156, 120, 48, 0.447);
+            color: #dff7f8; background-color: #416f9a; 
+            font-family: sans-serif;" type= "button" onclick=showit()> Calculate it! </button></center>
+
+        </form>
+
+        <br>
+        <script>
+            //on button click, calculate the info with go and display the content
+            function showit()
+            {
+                go();
+
+                var x = document.getElementById("answer");
+                x.style.display = "block";
+
+                var y = document.getElementById("factors");
+                y.style.display = "block";
+
+                var z = document.getElementById("button1");
+                z.style.backgroundColor = "#75c590";
+
+            }
+        </script>
+
+    <div class=back>
+
+    
+        <div id =answer style="display: none; color:#0a275ec7">
+        
+        The numbers:
+        <strong><div id="input1"></div></strong>
+
+        and 
+        <strong><div id="input2"></div></strong>
+
+        are 
+
+        <strong><div id="result"></div></strong>
+
+        </div>
+
+
+        
+        <div id = factors style="display:none; 
+        border-top:rgba(48, 91, 156, 0.447) solid 3px;">
+
+        <strong><div id="num1"></div></strong>
+
+
+
+        's factors are: 
+        
+        <strong><div id="afactors"></div></strong>
+        <br>
+        
+
+
+        <strong><div id="num2"></div></strong>
+        's factors are:
+
+        <strong><div id="bfactors"></div></strong>
+
+
+        </div>
+
+</div>
+
+        <script>
+    
+            //like a main function, uses the form1/2 values to 
+            //get the factors and sum
+            //getsum calls the final determining function (finalize)
+        function go()
+        {
+                
+            a = (document.getElementById("form1").value);
+            b = (document.getElementById("form2").value);
+
+            document.getElementById("num1").innerHTML = a;
+            document.getElementById("num2").innerHTML = b;
+                
+            getfactors(a,b);
+            getsum(a,b);
+        
+        }
+
+        //determines (not)amicable based on both factor arrays' sum
+        function finalize(asum,bsum)
+        {
+
+            result = "NULL";
+            if (amicable(asum,bsum))
+                result = "amicable";
+            else
+            {
+                result = "not amicable";
+            }
+            
+            document.getElementById("result").innerHTML = result;
+            
+        }
+        
+
+        //calls factorsof for a/b, the user inputs 
+        function getfactors(a,b)
+        {
+            
+            afactors = (factorsof(a));
+            bfactors = (factorsof(b));                 
+        }
+    
+        //calculates the sum of afactors and bfactors array
+        //then calls finalize
+        function getsum(afactors,bfactors)
+        {
+            asum = sumfact(afactors);
+            bsum = sumfact(bfactors);
+
+            document.getElementById("afactors").innerHTML = afactors;
+            document.getElementById("bfactors").innerHTML = bfactors;
+            finalize(asum,bsum);   
+
+        }
+
+        //true/false if amicable (factors sum equal each other)
+        function amicable(asum, bsum)
+            {
+            if (asum == bsum)
+                return true;
+            else
+                return false;
+            }
+
+        //calculates sum of an array input (all the factors of a number)
+        function sumfact(input)
+        {
+            sum = 0;
+            for (i = 0; i < input.length; i++)
+            {
+                sum+= input[i];   
+            }
+            return sum;
+        }
+        
+        //creates array of all number's factors
+        function factorsof(input)
+        {
+            factors = [];
+            if (input == "0")
+            {
+                factors.push(0);
+                return factors;
+            }
+
+            for (i = 0; i <= input; i++)
+            {
+                if(input % i == 0)
+                    factors.push(i);
+                else
+                {}
+            }
+            return factors;
+        }
+        </script>
+
+    </body>
+
+<footer>
+
+
+       <div class="banner">
+            Thanks for visiting our
+            <a href = "file:///C:/Users/eyal1/Downloads/tufts%202022/cs20/hw05.html" target = "_blank" > website!</a>
+       </div>
+</footer>
+</div>
+
+</html>
+
