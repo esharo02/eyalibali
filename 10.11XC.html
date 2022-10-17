@@ -1,0 +1,314 @@
+
+<html>
+    <head>
+        <title> Extra Credit 1 </title>
+        <link type= "text/css" rel="stylesheet" href="hw04_style.css">
+        <meta charset = "utf-8">
+        <div id = "full" style= "border:3px solid; border-color: rgb(91, 88, 84); background-color: rgb(231, 239, 241); margin=40px ">
+
+
+
+        <style>
+
+            table{
+                text-align: center; background-color: white;
+                margin-left:10px;
+                font-size: 20px;
+                line-height: 2;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color:rgba(70, 66, 66, 0.61);
+                border: 3px solid; border-color: #416f9a;
+
+
+
+            }
+            
+            
+            th{
+            border: 1px solid;
+            text-align: center;
+            }
+
+            td{
+                border:1px solid;
+                padding-left: 10px;
+
+                
+            }
+
+        </style>
+    </head>
+    <header>
+        <h1>Joe's NEW Hotdog Stand</h1>
+        
+        <h2>
+            Check out our re-vamped website!
+        </h2> 
+   </header>
+
+    <body>
+        <div class= bar>       
+            Make your order below:
+            <br>
+            </div>
+
+
+            <form name="myForm" style="text-align: center">
+
+            <table style="text-align: left; width:90%">
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th style="color: #7a1a04c7; width: 30px"><strong>Your Order</strong></th>
+            </tr>
+
+            <tr>
+                <td> Fries</td>
+                <td>$2.60 </td>
+                <td> <label for="fries"></label>
+                    <select id="fries" name="fries">
+                    
+                        <option value="0" selected> </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                      </select>
+                </td>
+
+            <tr>
+                <td> Sodas</td>
+                <td>$1.50 </td>
+                <td> <label for="sodas"></label>
+                    <select id="sodas" name="sodas">
+                    
+                        <option value="0" selected> </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                      </select>
+                </td>
+
+            <tr>
+                <td> Hotdogs</td>
+                <td>$4.25 </td>
+                <td> <label for="hotdogs"></label>
+                    <select id="hotdogs" name="hotdogs">
+                    
+                        <option value="0" selected> </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                      </select>
+                </td>
+
+
+                <br>
+            </table>
+
+
+
+            <br>
+            <br>
+              <center><button id="button1" style="text-align: center; background-color: #f8d0c3; font-size: 20px;
+            border: 2px solid; border-color: rgba(156, 120, 48, 0.447);
+            color: #dff7f8; background-color: #416f9a; 
+            font-family: sans-serif;" type= "button" onclick=doit()> Calculate it! </button></center>
+
+
+
+            <script>
+                function doit()
+                {
+
+                    userfries= (document.getElementById("fries").value);
+                    usersodas= (document.getElementById("sodas").value);
+                    userdogs= (document.getElementById("hotdogs").value);
+
+                    showit();
+                
+                }
+
+            </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h3 style="text-align:center">
+            <!-- <button id = button1 
+            style="background-color: #f8d0c3; font-size: 20px; border: 2px solid; border-color: rgba(156, 120, 48, 0.447);
+            color: #dff7f8; background-color: #416f9a; 
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            text-align: center" type= "button" onclick=showit()> Calculate Total</button> -->
+
+            <script>
+                function validate()
+                {
+                    if(userfries+usersodas+userdogs == 0)
+                        return false;
+                    else
+                        return true;
+                }
+                
+                function showit()
+                {                   
+                    if (validate())
+                    {
+                        calculate(userfries, usersodas, userdogs);
+                        var x = document.getElementById("calc");
+                        x.style.display = "block";
+
+                        var y = document.getElementById("button1");
+                        y.style.backgroundColor = "#75c590";
+                    }
+                    else
+                    {
+                        alert("Please select an item before submitting order!");
+                        return;
+                    }
+                }
+
+               
+            </script>
+ 
+        </h3>
+        
+
+        <h2 style="text-align: right; padding-right: 30px;">
+            <strong> <u>You owe me:</u> </strong><br> 
+
+    
+
+        <div id = calc style="display: none">
+            Subtotal: $
+            <strong><span id="subtotal"></span></strong>
+            <br>
+
+            Discount:  - 
+            <strong><span id="discount"></span></strong>
+            <br>
+
+            Tax:  +
+            <strong><span id="tax"></span></strong>
+            <hr>
+
+            Total: $
+            <strong><span id="price"></span></strong>
+        </div>
+        </h2>
+        
+        <script>
+
+            //get each food order
+            // fries = prompt("How many fries do you want?", "0");  
+            // document.getElementById("fries").innerHTML = fries; 
+            
+            // sodas = prompt("How many sodas do you want?", "0");  
+            // document.getElementById("sodas").innerHTML = sodas; 
+
+            // hotdogs = prompt("How many hotdogs do you want?", "0");  
+            // document.getElementById("hotdogs").innerHTML = hotdogs;
+        
+
+            function calculate(fries,sodas,hotdogs)
+            {
+            //calculate subtotal        
+            subtotal = Math.round(100 * (2.60 * (parseFloat(fries)))) / 100;
+            subtotal += Math.round(100 * (1.50 * (parseFloat(sodas)))) / 100;
+            subtotal += Math.round(100 * (4.25 * (parseFloat(hotdogs)))) / 100;
+            
+            //possible discount
+            discount = 0;
+            if(subtotal >=20)
+            {
+                discount = Math.round( 100 * (subtotal / 10)) /100;
+                    
+            }
+
+            //calculate total and round
+            price = parseFloat(subtotal);
+            price-=parseFloat(discount);
+            tax = Math.round(100 * price * 0.0625) / 100;
+            price+=tax;
+            price = Math.round(100 * parseFloat(price)) / 100;
+            
+            //add trailing zeros
+            function addzeros(a)
+            {
+                if(a % 1 == 0)
+                {
+                    a = a + ".0" + "0";
+                }
+                else if ((a * 10) % 1 == 0)
+                {
+                    a = a + "0";
+                }
+
+                else
+                {
+                    
+                }
+            return a;
+            }
+
+            //add zeros for each value
+            subtotal = addzeros(subtotal);
+            discount =  addzeros(discount);
+            tax = addzeros(tax);
+            price = addzeros(price);
+
+            //send back the new values to display
+            document.getElementById("price").innerHTML = price; 
+            document.getElementById("tax").innerHTML = tax; 
+            document.getElementById("subtotal").innerHTML = subtotal;
+            document.getElementById("discount").innerHTML = discount;
+
+
+        }
+
+        </script>
+
+        <footer>
+            <div class = bar style="margin:0px">
+            Thanks for Visiting Us! <br>
+            Wanna make 
+            <a href = file:///C:/Users/eyal1/Downloads/tufts%202022/cs20/10.11XC.html target = "_blank" > another order?</a>
+            </div>
+        </footer>
+    </div>
+
+    </body>
+</html>

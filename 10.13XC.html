@@ -1,0 +1,145 @@
+
+<html>
+    <head>
+        <title> Extra Credit 3 </title>
+        <link type= "text/css" rel="stylesheet" href="hw04_style.css">
+        <meta charset = "utf-8">
+        <div id = "full" style= "border:3px solid; border-color: rgb(91, 88, 84); background-color: rgb(231, 239, 241); margin=40px ">
+
+
+
+        <style>
+
+            button
+            {
+                style="background-color: #f8d0c3; font-size: 20px; border: 2px solid; border-color: rgba(156, 120, 48, 0.447);
+                color: white; background-color: #416f9a; 
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                text-align:center;
+            } 
+
+        </style>
+    </head>
+    <header>
+        <h1>Extra Credit CheckBoxes </h1>
+        
+        <h2>
+            Check-mate :)
+        </h2> 
+   </header>
+
+    <body>
+        <div class= bar>    
+            Check out these moves!   
+            <br>
+            </div>
+
+            
+            <form style="text-align: left; padding-left: 10px">
+
+            
+                
+                <strong><input type="checkbox" name="choice" id="all" value = "Check All" onclick=doit(this)>
+                <span id = swapper> Check All</span>
+                </strong>
+                <br>
+                <br>
+                <input type="checkbox" name="choice" id="first"> first
+                <br>
+                <input type="checkbox" name="choice" id="second"> second
+                <br>
+                <input type="checkbox" name="choice" id="third"> third
+                <br>
+                <input type="checkbox" name="choice" id="fourth"> fourth
+            
+
+
+
+
+            </form>
+
+
+            <script>
+
+                //edge case: you check all manually
+            
+                counter = 0;
+
+                function doit(source) 
+                {
+                    counter++;
+                    
+                    allboxes = document.getElementsByName('choice');
+                    for(var i=0, n=allboxes.length;i<n;i++)
+                    {
+                        allboxes[i].checked = source.checked;
+                    }
+
+                    // document.getElementById("all").textContent = "Uncheck All";
+                    if (counter % 2 == 1)
+                    {
+                        document.getElementById("swapper").innerHTML = "Uncheck All"
+
+
+                    }
+                    else if (counter %2 == 0)
+                    {
+                        document.getElementById("swapper").innerHTML = "Check All"
+
+                    }
+
+                    ;//= "Uncheck All";
+
+
+                
+                }
+
+
+                counter = 0;
+                    // function doit()
+                    // {
+                
+
+                    //     counter++;
+                        
+
+                    //     if(counter%2 == 1)
+                    //         case1();
+                    //     else if (counter%2 == 0)
+                    //     {
+                    //         case2();
+                        
+                    //     }
+                    // }
+
+                    // function case1()
+                    // {
+                    //     all = document.getElementById("all").checked;
+                    //     // alert(all);
+                    //     alert(document.getElementById("all").label);
+
+                        
+
+
+                    // }
+
+                    // function case2()
+                    // {
+                      
+            
+
+            
+
+
+            </script>
+
+
+        <footer>
+            <div class = bar style="margin:0px">
+            Thanks for Visiting Us! <br>
+             </div>
+        </footer>
+    </div>
+
+    </body>
+</html>

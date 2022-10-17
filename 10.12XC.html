@@ -1,0 +1,120 @@
+
+<html>
+    <head>
+        <title> Extra Credit 2</title>
+        <link type= "text/css" rel="stylesheet" href="hw04_style.css">
+        <meta charset = "utf-8">
+        <div id = "full" style= "border:3px solid; border-color: rgb(91, 88, 84); background-color: rgb(231, 239, 241); margin=40px ">
+
+
+
+        <style>
+
+            button
+            {
+                style="background-color: #f8d0c3; font-size: 20px; border: 2px solid; border-color: rgba(156, 120, 48, 0.447);
+                color: white; background-color: #416f9a; 
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                text-align:center;
+            } 
+
+        </style>
+    </head>
+    <header>
+        <h1>Extra Credit: JUMP</h1>
+        
+        <h2>
+            Check out these moves!
+        </h2> 
+   </header>
+
+    <body>
+        <div class= bar>    
+            Put something in the first box:
+            <br>
+            </div>
+
+            
+            <form style="text-align: center">
+                <label for=left></label>
+                <input type="text" id="left" name="left"> 
+            
+
+             <button id = middle type= "button" onclick=showit()> JUMP></button>
+
+            
+                <label for=right></label>
+                <input type="text" id="right" name="right"> 
+            </form>
+
+             
+
+            <script>
+                { 
+                    counter = 0;
+                    function showit()
+                    {
+                
+
+                    counter++;
+                    
+
+                    if(counter%2 == 1)
+                        case1();
+                    else if (counter%2 == 0)
+                    {
+                        case2();
+                    }
+                    // alert(counter);
+                    
+
+                    }
+                    
+
+                function case1()
+                {
+                    //alert("case 1");
+                    left = document.getElementById("left").value;
+                    //alert(left);
+
+                    document.getElementById("right").value = left;
+                    right = document.getElementById("right").value;
+                    document.getElementById("left").value = "";
+
+
+
+                    document.getElementById("middle").textContent = "< JUMP"
+                    var y = document.getElementById("middle");
+
+                }
+
+                function case2()
+                {
+                    //alert("case 2");
+                    right = document.getElementById("right").value;
+                    //alert(left);
+
+                    document.getElementById("left").value = right;
+                    right = document.getElementById("left").value;
+                    document.getElementById("right").value = "";
+
+        
+                    document.getElementById("middle").textContent = "JUMP >"
+
+                }
+
+                }
+
+
+                </script>
+
+
+        <footer>
+            <div class = bar style="margin:0px">
+            Thanks for Visiting Us! <br>
+             </div>
+        </footer>
+    </div>
+
+    </body>
+</html>
