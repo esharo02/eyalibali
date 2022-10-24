@@ -4,7 +4,10 @@
         <title> Cart </title>
         <link type= "text/css" rel="stylesheet" href="midterm_style.css">
         <meta charset = "utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
         <style>
+           
            
            table{
                 text-align: center; background-color: white;
@@ -59,8 +62,41 @@
         </h2>
         <br>
 
+        <p id = theButtons style="display: block">
+        <input type="radio"  name="coup" value = "No Coupon" checked="checked"/>No Coupon  
+        <input type="radio"  name='coup' value = "Coupon"/> Coupon
+        </p>
 
-        <p class="coupon"><label>Enter Coupon Code: </label> <input type="text"  name='coupon' />
+        <script>
+            $("input:radio").change(showAddress);
+
+            applied = false;
+            function showAddress()
+            {
+                if (applied)
+                {
+                    document.getElementsByName("coup")[1].checked = true;
+                    return;
+                }
+
+                yn = document.getElementsByClassName("coupon");
+
+                if (yn[0].style.display == "none")
+		        {
+                    yn[0].style.display = "block";
+                }                    
+                else if(yn[0].style.display == "block")
+                {               
+                    yn[0].style.display = "none";
+                }
+            }
+
+
+
+        </script>
+        
+        
+        <p class="coupon" style="display: none"><label>Enter Coupon Code: </label> <input type="text"  name='coupon' />
             <button id="button1" style="text-align: center; background-color: #f8d0c3; font-size: 13px;
                 border: 2px solid; border-color: rgba(156, 120, 48, 0.447);
                 color: #dff7f8; background-color: #416f9a; 
@@ -126,7 +162,7 @@
                 </td>
 
             <tr>
-                <td> Baseball Jersey</td>
+                <td> Basketball Jersey</td>
                 <td id = cost3>89.99 </td>
                 <td> <label for="item3"></label>
                     <select id="item3" name="item3">
@@ -193,7 +229,6 @@ function addzeros(a)
     function coupon() //this counts as validation
     {
       
-        
         input = document.getElementsByName("coupon")[0].value;
         if (input == "GREEN" || input == "green" || input == "Green")
             discount = 0.10;
@@ -204,6 +239,7 @@ function addzeros(a)
         {
             var y = document.getElementById("button1");
                    y.style.backgroundColor = "#75c590";
+            applied = true;
             alert("Coupon approved");
             calc();
         }
@@ -213,10 +249,6 @@ function addzeros(a)
                    y.style.backgroundColor = "rgb(75, 20, 20)";
             alert("Coupon not approved");
         }
-
-        
-            
-    
 }
     addEventListener();
     function addEventListener()
