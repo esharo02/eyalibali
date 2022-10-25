@@ -1,0 +1,90 @@
+
+
+{ "playlist" :
+[{
+    "Name" : "One More Night",
+    "Artist" : "Maroon 5",
+    "Genre" : ["Pop "],
+    "Year" : "2012 "
+},
+
+{
+    "Name" : "Without You",
+    "Artist" : "The Kid LAROI ",
+    "Genre" : "Pop",
+    "Year" : "2020"
+
+},
+
+{
+    "Name" : "Locked Out of Heaven",
+    "Artist" : "Bruno Mars",
+    "Genre" : "Pop",
+    "Year" : "2012"
+
+},
+
+{
+    "Name" : "Set Fire to the Rain ",
+    "Artist" : "Adele",
+    "Genre" : "Pop",
+    "Year" : "2011"
+
+},
+{
+    "Name" : "Hotel California",
+    "Artist" : "Eagles",
+    "Genre" : "Rock",
+    "Year" : "1976"
+
+},
+{
+    "Name" : "Dream On",
+    "Artist" : "Aerosmith",
+    "Genre" : "Rock",
+    "Year" : "1973"
+
+},
+{
+    "Name" : "Roxanne",
+    "Artist" : "The Police",
+    "Genre" : "Rock",
+    "Year" : "1973"
+
+},
+{
+    "Name" : "The Joker",
+    "Artist" : "Steve Miller Band",
+    "Genre" : "Rock",
+    "Year" : "1973"
+
+},
+
+{
+    "Name" : "No Scrubs",
+    "Artist" : "TLC",
+    "Genre" : "RnB",
+    "Year" : "1999"
+
+},
+{
+    "Name" : "Burn",
+    "Artist" : "Usher",
+    "Genre" : "RnB",
+    "Year" : "2004"
+
+},
+{
+    "Name" : "No One",
+    "Artist" : "Alicia Keys",
+    "Genre" : "RnB",
+    "Year" : "2007"
+
+},
+{
+    "Name" : "Gold Digger",
+    "Artist" : "Kanye West",
+    "Genre" : "RnB",
+    "Year" : "2005"
+
+}]}
