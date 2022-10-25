@@ -37,10 +37,22 @@
 
                 // document.write(names);
 
+                $.get( "https://esharo02.github.io/eyalibali/hw07.json", 
+		  function( data ) {
+			str = JSON.stringify(data);
+			document.write(str +"<br/>");
+		strHTML= "<ul>";
+		data.forEach(function(playlist) { 
+		strHTML += "<li>" 
+			    + playlist.genre + " : " 			
+            }) 
+	strHTML += "</ul>";
+	document.write (strHTML);  /**/
+	})
 
 
 
-           loadData();
+           //loadData();
             function loadData() {
 			
 			request = new XMLHttpRequest();
@@ -61,6 +73,8 @@
 					document.getElementById("info").innerHTML += "<br>Data is ready!";
 
 					theData = request.responseText;
+                    artist = theData[0];
+                    alert(artist);
 					document.getElementById("info").innerHTML += "<br>The response is: " + theData;
 					
 				}
