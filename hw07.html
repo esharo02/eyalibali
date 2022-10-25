@@ -1,0 +1,122 @@
+    <html>
+    <head>
+        <title> Homework 7 </title>
+        <link type= "text/css" rel="stylesheet" href="hw04_style.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <!-- <script src= hw07.json></script> -->
+        <style>
+           
+        </style>
+    </head>
+
+    <header>
+    
+
+    
+    </header>
+
+    <body>
+        <h1>
+            Song List
+        </h1>
+
+        <div id = info>
+        </div>
+            <script>
+            
+                // var mydata = JSON.parse(playlist);
+                // //hardcode!!
+                // alert(mydata[0].Genre);
+                // names = [];
+                // // for (i = 0; i < 2; i++)
+                // {
+                //     names.push = mydata[i].Name;
+                // }
+
+                // document.write(names);
+
+
+
+
+           loadData();
+            function loadData() {
+			
+			request = new XMLHttpRequest();
+			document.getElementById("info").innerHTML += "<br>Step 1";
+ 
+			request.open("GET", "https://eyals.sgedu.site/hw07.json", true);
+            //webstite here!!!
+
+			document.getElementById("info").innerHTML += "<br>Step 2";
+
+			request.onreadystatechange = function() {
+				document.getElementById("info").innerHTML += "<br>current ready state: " + request.readyState;
+  
+				if (request.readyState == 4 && 
+					request.status == 200) 
+				{
+					// bingo!  time to use the data
+					document.getElementById("info").innerHTML += "<br>Data is ready!";
+
+					theData = request.responseText;
+					document.getElementById("info").innerHTML += "<br>The response is: " + theData;
+					
+				}
+				else if (request.readyState == 4 && request.status != 200) 
+				{
+				   document.getElementById("info").innerHTML += "<br>Request failed!";
+				}
+
+			}
+			document.getElementById("info").innerHTML += 
+					"<br>Sending request";
+			request.send();
+			
+		}  // end load data
+
+
+
+
+//get jquery link
+            // alert("hello");
+            // $.getJSON("hw07.json", doit);
+            // mydata = JSON.parse(data);
+
+
+            // $.getJSON("hw07.json", doit);
+            // $(document).ready($.getJSON("hw07.json", function(){alert("hey")}));
+            // $.get("https://eyals.sgedu.site/hw07.json",
+            // function doit(){
+            //     get(playlist);
+            // })
+            
+
+
+            function doit()
+            {
+                alert("here")
+                // mydata = JSON.parse(data);
+                // alert(mydata[0].Artist);
+
+                
+                // alert("we in here");
+                // song = JSON.stringify(artist);
+                // alert(song);
+            }
+
+     </script>
+
+
+            <div class="bar" style="margin:0px">
+                Thanks for Visiting Us! <br>
+                Wanna make 
+                <a href = "https://eyals.sgedu.site/hw04.html" target = "_blank" > another order?</a>
+                </div>
+            </footer>
+
+    </div>
+
+    </body>
+</html>
