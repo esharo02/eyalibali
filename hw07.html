@@ -22,6 +22,9 @@
             Song List
         </h1>
 
+        <h2>
+            1
+        </h2>
         <div id = info>
         </div>
             <script>
@@ -37,18 +40,18 @@
 
                 // document.write(names);
 
-                $.get( "https://esharo02.github.io/eyalibali/hw07.json", 
-		  function( data ) {
-			str = JSON.stringify(data);
-			document.write(str +"<br/>");
-		strHTML= "<ul>";
-		data.forEach(function(playlist) { 
-		strHTML += "<li>" 
-			    + playlist.genre + " : " 			
-            }) 
-	strHTML += "</ul>";
-	document.write (strHTML);  /**/
-	})
+             $.get( "https://esharo02.github.io/eyalibali/hw07.json", 
+                    function( data ) {
+                        str = JSON.stringify(data);
+                        document.write(str +"<br/>");
+                    strHTML= "<ul>";
+                    data.forEach(function(genre) { 
+                    strHTML += "<li>" + genre + " ..." 			
+                        }) 
+                strHTML += "</ul>";
+                document.write (strHTML);  /**/
+                alert(strHTML);
+                })
 
 
 
